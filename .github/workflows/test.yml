@@ -18,5 +18,6 @@ jobs:
       - name: Build sandbox
         shell: bash
         run: |
+          set -x
           source build-env
           sandbox-init
