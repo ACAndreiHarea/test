@@ -5,15 +5,14 @@ on:
 
 jobs:
   build:
-    runs-on: cloud
+    runs-on: self-hosted
     container:
       image: docksal/ci-agent:base
     env:
       CI_SSH_KEY: ${{ secrets.CI_SSH_KEY }}
       DOCKSAL_HOST_IP: ${{ secrets.DOCKSAL_HOST_IP }}
       DOCKSAL_HOST_SSH_KEY: ${{ secrets.DOCKSAL_HOST_SSH_KEY }}
-      #GITHUB_TOKEN: ${{ github.token }}
-      GITHUB_TOKEN: ${{ BGD3OU4TYHYXNNX3WX7MDGLGEEGPQ }}
+      GITHUB_TOKEN: ${{ github.token }}
       REMOTE_CODEBASE_METHOD: git
     steps:
       - name: Build sandbox
