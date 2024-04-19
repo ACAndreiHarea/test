@@ -19,9 +19,6 @@ jobs:
       - name: Build sandbox
         shell: bash
         run: |
-          #set -x 
-          mkdir p $HOME/build/testing-main
-          cd $HOME/build/testing-main
+          set -x 
           source build-env
-          fin init --name=testing-main --choise=0 --repo=https://github.com/ACAndreiHarea/test.git --branch=main  -y
           sandbox-init
